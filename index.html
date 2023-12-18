@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head> 
+        <title>Colour Palette Generator</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="index.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <main class="container" id="container">
+            <!-- header section -->
+            <header class="header" id="header">
+                <!-- light/dark mode toggle -->
+                <div class="toggle-btn">
+                    <input type="checkbox" class="checkbox" id="checkbox">
+                    <label for="checkbox" class="checkbox-label">
+                        <span class="ball" id="ball"></span>
+                    </label>
+                </div>
+                <h1 class="main-title"> Colour Palette Generator</h1>
+                <label for="colourpicker" class="colourpicker-label" id="colourpicker-label"> 
+                    Base Colour: </label>
+                <input type="color" id="colourpicker" class="colourpicker" value="#27dd3c">
+                <div class="dropdown-container">
+                    <button id="dropdown-btn" class="dropdown-btn"> 
+                        Monochrome <i class="fa fa-regular fa-caret-down"></i> </button>
+                    <div class="dropdown-menu" id="dropdown-menu">
+                        <button id="Monochrome" class="dropdown-menu-option"> 
+                            Monochrome</button>
+                        <button id="Monochrome-dark" class="dropdown-menu-option">
+                            Monochrome-dark</button>
+                        <button id="Monochrome-light" class="dropdown-menu-option">
+                            Monochrome-light</button>
+                        <button id="Analogic" class="dropdown-menu-option">
+                            Analogic</button>
+                        <button id="Complement" class="dropdown-menu-option">
+                            Complement</button>
+                        <button id="Analogic-complement" class="dropdown-menu-option">
+                            Analogic-complement</button>
+                        <button id="Triad" class="dropdown-menu-option">
+                            Triad</button>
+                    </div>
+                </div>
+                <button class="generate-scheme-btn" id="generate-scheme-btn">
+                    Generate</button>
+            </header>
+
+            <!-- colour display options -->
+            <section class="colour-display-section" id="colour-display-section">
+                <!-- colour displays of hex values will go here -->
+            </section>
+
+            <!-- footer section -->
+            <footer class="footer" id="footer">
+                <!-- hex values will go here -->
+            </footer>
+        </main>
+    <script src="index.js" type="module"></script>
+    </body>
+</html>
