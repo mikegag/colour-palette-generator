@@ -25,16 +25,21 @@ document.getElementById("checkbox").addEventListener("change", () => {
 async function generateSchemeOption(id) {
     if(id === document.getElementById("generate-scheme-btn").id)
     {
-        const resp = 
-          await fetch(`https://www.thecolorapi.com/scheme?hex=${colourPicker.value.slice(1)}&mode=${currentSelectedTheme}&count=5`)  
-        const data = await resp.json()
-      
-        if(isStructureLoaded!= true)
-        {
-            formatDisplay(data.colors)
-            isStructureLoaded = true
+        try {
+            const resp = 
+            await fetch(`https://www.thecolorapi.com/scheme?hex=${colourPicker.value.slice(1)}&mode=${currentSelectedTheme}&count=5`)  
+            const data = await resp.json()
+        
+            if(isStructureLoaded!= true)
+            {
+                formatDisplay(data.colors)
+                isStructureLoaded = true
+            }
+            updateSchemeDisplay(data.colors)
         }
-        updateSchemeDisplay(data.colors)
+        catch {
+            document.getElementById("container").innerHTML= `<h2> Oops! Refresh the page</h2>`
+        }
     }
 }
 
